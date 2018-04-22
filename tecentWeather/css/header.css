@@ -1,0 +1,248 @@
+@charset "UTF-8";
+.header {
+	min-width: 1250px;
+	height: 320px;
+	box-sizing: border-box;
+	padding: 30px 0;
+	background-color: #6991c7;
+	background-image: -webkit-linear-gradient(97deg,#6991c7,#a3bded);
+}
+.header .top {
+	height: 40px;
+}
+
+/*--顶部logo搜索板块样式开始--*/
+.top h1,
+.top .search {
+	float: left;
+}
+.top h1 {
+	width: 150px;
+	height: 100%;
+	background: url(../images/sprite-926fe8b98d.png) -118px 6px no-repeat;
+}
+.top .search,
+.top .origin {
+	height: 16px;
+	margin: 7px 0;
+	padding: 5px 0;
+	line-height: 16px;
+	color: #fff;
+	text-align: center;
+}
+.top .search {
+	position: relative;
+	padding: 5px 10px;
+	margin-left: 40px;
+	border-radius: 5px;
+	background-color: rgb(110,128,158);
+	cursor: pointer;
+	font-size: 0px;
+}
+.top .search .local-btn {
+	width: 16px;
+	height: 100%;
+	display: inline-block;
+	background: url(../images/sprite-926fe8b98d.png) -252px -33px no-repeat;
+	vertical-align: top;
+}
+.top .search > span {
+	font-size: 16px;
+	padding-left: 5px;
+}
+/*.top .search:hover .hidden {
+	display: block;
+}*/
+.top .search .hidden {
+	display: none;
+	position: absolute;
+	left: 0;
+	top: -7px;
+	width: 325px;
+	max-height: 245px;
+	box-sizing: border-box;
+	padding: 3px 0 3px 15px;
+	border-radius: 5px;
+	background: #fff;
+}
+.search .hidden .search-bar {
+	position: relative;
+	height: 30px;
+	border-bottom: 1px solid #ccc;
+}
+.hidden .search-bar .search-btn {
+	position: absolute;
+	left: 3px;
+	top: 9px;
+	width: 13px;
+	height: 14px;
+	background: url(../images/sprite-926fe8b98d.png) -120px -102px no-repeat;
+}
+.hidden .search-bar input {
+	width: 100%;
+	height: 100%;
+	border: none;
+	outline: none;
+	font-size: 16px;
+	text-indent: 24px;
+	vertical-align: top;
+}
+.hidden .more-city {
+	width: 310px;
+	max-height: 209px;
+	box-sizing: border-box;
+	padding: 5px 10px;
+	color: #888;
+	font-size: 16px;
+	overflow-y: auto;
+}
+.hidden .more-city .location {
+	height: 16px;
+	margin: 4px 0;
+	text-align: left;
+}
+.more-city .location .location-btn {
+	display: inline-block;
+	width: 12px;
+	height: 14px;
+	background: url(../images/sprite-926fe8b98d.png) -256px -48px no-repeat;
+}
+.more-city .hot-city li {
+	float: left;
+	padding: 5px 0 4px 0;
+	text-align: left;
+}
+.more-city .c-match li {
+	height: 26px;
+	line-height: 26px;
+	font-size: 14px;
+	text-align: left;
+}
+.hot-city li a {
+	display: block;
+	height: 16px;
+	width: 72px;
+}
+.hot-city li a:hover,
+.more-city .c-match li span {
+	color: rgb(107,149,244);
+}
+.top .origin {
+	float: right;
+	font-size: 16px;	
+}
+.header .bottom {
+	height: 130px;
+	margin-top: 40px;
+}
+/*--顶部logo搜索板块样式结束--*/
+/*--天气状况描述板块样式开始--*/
+.bottom .weather-short {
+	float: left;
+	height: 100%;
+}
+.bottom .weather-short img,
+.bottom .weather-short .weather-des {
+	height: 110px;
+	margin: 10px 0;
+	color: #fff;
+}
+.bottom .weather-short img {
+	float: left;
+	width: 110px;
+	margin-right: 40px;
+}
+.bottom .weather-short .weather-des {
+	display: inline-block;
+	/*width: 470px;*/
+	font-size: 0;
+}
+.weather-des .tem-air {
+	height: 70px;
+	font-weight: bold;
+}
+.tem-air .temperature {
+	display: inline-block;
+	height: 70px;
+	line-height: 70px;
+	font-size: 70px;
+}
+.tem-air .air {
+	font-size: 30px;
+	margin-left: 16px;
+}
+.weather-des .wind-humidity-pressure {
+	height: 32px;
+	margin-top: 8px;
+}
+.wind-humidity-pressure span + span {
+	margin-left: 36px;
+}
+.wind-humidity-pressure span {
+	display: inline-block;
+}
+.wind-humidity-pressure .wind .wind-btn,
+.wind-humidity-pressure .humidity .humidity-btn,
+.wind-humidity-pressure .pressure .pressure-btn {
+	display: inline-block;
+	height: 32px;
+	width: 32px;
+	margin-right: 6px;
+	background: url(../images/sprite-926fe8b98d.png) -207px -119px no-repeat;
+}
+.wind-humidity-pressure .humidity .humidity-btn {
+	background-position: -64px -153px;
+}
+.wind-humidity-pressure .pressure .pressure-btn {
+	background-position: -97px -155px;
+}
+.weather-des .word {
+	height: 32px;
+	font-size: 20px;
+	line-height: 32px;
+	vertical-align: top;
+}
+.bottom .pollute {
+	float: right;
+	width: 64px;
+	height: 100px;
+	padding: 15px 18px;
+	border-radius: 5px;
+	background: #fff;
+	font-size: 0;
+}
+.pollute .poll-btn,
+.pollute .poll-num,
+.pollute .poll-degree{
+	display: block;
+}
+.pollute .poll-btn {
+	width: 34px;
+	height: 42px;
+	margin: auto;
+	margin-top: 5px;
+	background: url(../images/sprite-926fe8b98d.png) -80px 0 no-repeat;
+}
+.pollute .poll-num {
+	margin: 10px 0;
+	color: rgb(243,149,11);
+	font-size: 20px;
+	text-align: center;
+}
+.pollute .poll-degree {
+	font-size: 16px;
+	color: #888;
+	text-align: center;
+}
+/*--天气状况描述板块样式结束--*/
+.header .title,
+.container .con,
+.footer .message {
+	width: 1250px;
+	height: 100%;
+	margin: 0 auto;
+}
+/*.footer .message {
+	background: #fa6;
+}*/
+

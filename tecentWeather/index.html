@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0,minimum-scale=1.0,user-scalable=0" />
+	<title>腾讯天气</title>
+	<link rel="stylesheet" href="./css/init.css">
+	<link rel="stylesheet" href="./css/header.css">
+	<link rel="stylesheet" href="./css/container.css">
+	<link rel="stylesheet" href="./css/footer.css">
+</head>
+<body>
+	<div class="header">
+		<div class="title">
+			<div class="top">
+				<h1></h1>
+				<!-- 搜索区域 -->
+				<div class="search">  
+					<i class="local-btn"></i>
+					<span class="pro-city-c">湖南省 衡阳市</span>
+					<div class="hidden">
+						<div class="search-bar">
+							<i class="search-btn"></i>
+							<input type="text" placeholder="搜索地区/景点">
+						</div>
+						<div class="more-city">
+							<div class="l-m-city">
+								<p class="location">衡阳市 <i class="location-btn"></i></p>
+								<ul class="hot-city clearfix">
+									<li><a href="#" data-province="北京">北京</a></li>
+									<li><a href="#" data-province="上海">上海</a></li>
+									<li><a href="#" data-province="广东">广州</a></li>
+									<li><a href="#" data-province="广东">深圳</a></li>
+									<li><a href="#" data-province="天津">天津</a></li>
+									<li><a href="#" data-province="陕西">西安</a></li>
+									<li><a href="#" data-province="湖北">武汉</a></li>
+									<li><a href="#" data-province="四川">成都</a></li>
+									<li><a href="#" data-province="河北">石家庄</a></li>
+									<li><a href="#" data-province="河南">郑州</a></li>
+									<li><a href="#" data-province="黑龙江">哈尔滨</a></li>
+									<li><a href="#" data-province="山西">太原</a></li>
+									<li><a href="#" data-province="新疆">乌鲁木齐</a></li>
+									<li><a href="#" data-province="山东">济南</a></li>
+									<li><a href="#" data-province="福建">福州</a></li>
+									<li><a href="#" data-province="西藏">日喀则</a></li>
+									<li><a href="#" data-province="福建">厦门</a></li>
+									<li><a href="#" data-province="山东">青岛</a></li>
+									<li><a href="#" data-province="江苏">扬州</a></li>
+									<li><a href="#" data-province="安徽">合肥</a></li>
+									<li><a href="#" data-province="重庆">重庆</a></li>
+									<li><a href="#" data-province="江西">南昌</a></li>
+									<li><a href="#" data-province="河北">唐山</a></li>
+									<li><a href="#" data-province="浙江">杭州</a></li>
+									<li><a href="#" data-province="河北">邢台</a></li>
+									<li><a href="#" data-province="辽宁">沈阳</a></li>
+									<li><a href="#" data-province="河北">邯郸</a></li>
+									<li><a href="#" data-province="云南">昆明</a></li>
+								</ul>
+							</div>						
+							<ul class="c-match"></ul>
+						</div>					
+					</div>
+				</div>
+				<div class="origin">中央气象台 13:00发布</div>
+			</div>
+			<div class="bottom">
+				<!-- 天气简介板块 -->
+				<div class="weather-short">
+					<img src="./images/s-02.png" alt="" width="175" height="175">
+					<div class="weather-des">
+						<p class="tem-air">
+							<span class="temperature">11°</span>
+							<span class="air">小雨</span>
+						</p>
+						<p class="wind-humidity-pressure">
+							<span class="wind">
+								<i class="wind-btn"></i>
+								<span class="word">北风2级</span>
+							</span>
+							<span class="humidity">
+								<i class="humidity-btn"></i>
+								<span class="word">湿度77%</span>
+							</span>
+							<span class="pressure">
+								<i class="pressure-btn"></i>
+								<span class="word">气压 1015hPa</span>
+							</span>
+						</p>
+					</div>
+				</div>
+				<!-- 空气质量板块 -->
+				<div class="pollute">
+					<i class="poll-btn"></i>
+					<span class="poll-num">149</span>
+					<span class="poll-degree">轻度污染</span>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="container">
+		<div class="con">
+			<div class="forecast-hours">
+				<h2 class="tit">逐小时预报<a href="" class="mes-origin">数据来源于中国天气网</a></h2>
+				<div class="wea-show">
+					<div class="wrap-forecast-1h">
+						<ol class="forecasts">
+							<li class="item">
+								<p class="txt-time">10:00</p>
+								<img src="./images/07.png" alt="">
+							</li>
+							<li class="item">
+								<p class="txt-time">11:00</p>
+								<img src="./images/07.png" alt="">
+							</li>
+							<li class="item">
+								<p class="txt-time">12:00</p>
+								<img src="./images/07.png" alt="">
+							</li>
+							<li class="item">
+								<p class="txt-time">12:00</p>
+								<img src="./images/07.png" alt="">
+							</li>
+							<li class="item">
+								<p class="txt-time">12:00</p>
+								<img src="./images/07.png" alt="">
+							</li>
+							<li class="item">
+								<p class="txt-time">12:00</p>
+								<img src="./images/07.png" alt="">
+							</li>
+							<li class="item">
+								<p class="txt-time">12:00</p>
+								<img src="./images/07.png" alt="">
+							</li>
+
+							<li class="item">
+								<p class="txt-time">12:00</p>
+								<img src="./images/07.png" alt="">
+							</li>
+							<li class="item">
+								<p class="txt-time">12:00</p>
+								<img src="./images/07.png" alt="">
+							</li>
+							<li class="item">
+								<p class="txt-time">12:00</p>
+								<img src="./images/07.png" alt="">
+							</li>
+							<li class="item">
+								<p class="txt-time">12:00</p>
+								<img src="./images/07.png" alt="">
+							</li>
+							<li class="item">
+								<p class="txt-time">12:00</p>
+								<img src="./images/07.png" alt="">
+							</li>
+
+							<li class="item">
+								<p class="txt-time">12:00</p>
+								<img src="./images/07.png" alt="">
+							</li>
+							<li class="item">
+								<p class="txt-time">12:00</p>
+								<img src="./images/07.png" alt="">
+							</li>
+							<li class="item">
+								<p class="txt-time">12:00</p>
+								<img src="./images/07.png" alt="">
+							</li>
+							<li class="item">
+								<p class="txt-time">12:00</p>
+								<img src="./images/07.png" alt="">
+							</li>
+							<li class="item">
+								<p class="txt-time">12:00</p>
+								<img src="./images/07.png" alt="">
+							</li>
+							<li class="item">
+								<p class="txt-time">12:00</p>
+								<img src="./images/07.png" alt="">
+							</li>
+							<li class="item">
+								<p class="txt-time">12:00</p>
+								<img src="./images/07.png" alt="">
+							</li>
+							<li class="item">
+								<p class="txt-time">12:00</p>
+								<img src="./images/07.png" alt="">
+							</li>
+							<li class="item">
+								<p class="txt-time">12:00</p>
+								<img src="./images/07.png" alt="">
+							</li>
+							<li class="item">
+								<p class="txt-time">12:00</p>
+								<img src="./images/07.png" alt="">
+							</li>
+							<li class="item">
+								<p class="txt-time">12:00</p>
+								<img src="./images/07.png" alt="">
+							</li>
+							<li class="item">
+								<p class="txt-time">12:00</p>
+								<img src="./images/07.png" alt="">
+							</li>
+							<li class="item">
+								<p class="txt-time">12:00</p>
+								<img src="./images/07.png" alt="">
+							</li>
+							<li class="item">
+								<p class="txt-time">12:00</p>
+								<img src="./images/07.png" alt="">
+							</li>
+							<li class="item">
+								<p class="txt-time">12:00</p>
+								<img src="./images/07.png" alt="">
+							</li>
+							<li class="item">
+								<p class="txt-time">12:00</p>
+								<img src="./images/07.png" alt="">
+							</li>
+							<li class="item">
+								<p class="txt-time">12:00</p>
+								<img src="./images/07.png" alt="">
+							</li>
+							<li class="item">
+								<p class="txt-time">12:00</p>
+								<img src="./images/07.png" alt="">
+							</li>
+							<li class="item">
+								<p class="txt-time">12:00</p>
+								<img src="./images/07.png" alt="">
+							</li>
+							<li class="item">
+								<p class="txt-time">12:00</p>
+								<img src="./images/07.png" alt="">
+							</li>
+							<li class="item">
+								<p class="txt-time">12:00</p>
+								<img src="./images/07.png" alt="">
+							</li>
+							<li class="item">
+								<p class="txt-time">12:00</p>
+								<img src="./images/07.png" alt="">
+							</li>
+							<li class="item">
+								<p class="txt-time">12:00</p>
+								<img src="./images/07.png" alt="">
+							</li>
+							<li class="item">
+								<p class="txt-time">12:00</p>
+								<img src="./images/07.png" alt="">
+							</li>
+							<li class="item">
+								<p class="txt-time">12:00</p>
+								<img src="./images/07.png" alt="">
+							</li>
+							<li class="item">
+								<p class="txt-time">12:00</p>
+								<img src="./images/07.png" alt="">
+							</li>
+							<li class="item">
+								<p class="txt-time">12:00</p>
+								<img src="./images/07.png" alt="">
+							</li>
+							<li class="item">
+								<p class="txt-time">12:00</p>
+								<img src="./images/07.png" alt="">
+							</li>
+							<li class="item">
+								<p class="txt-time">12:00</p>
+								<img src="./images/07.png" alt="">
+							</li>
+							<li class="item">
+								<p class="txt-time">12:00</p>
+								<img src="./images/07.png" alt="">
+							</li>
+							<li class="item">
+								<p class="txt-time">12:00</p>
+								<img src="./images/07.png" alt="">
+							</li>
+							<li class="item">
+								<p class="txt-time">12:00</p>
+								<img src="./images/07.png" alt="">
+							</li>
+							<li class="item">
+								<p class="txt-time">12:00</p>
+								<img src="./images/07.png" alt="">
+							</li>
+							<li class="item">
+								<p class="txt-time">12:00</p>
+								<img src="./images/07.png" alt="">
+							</li>
+							<li class="item">
+								<p class="txt-time">12:00</p>
+								<img src="./images/07.png" alt="">
+							</li>
+							<li class="item">
+								<p class="txt-time">12:00</p>
+								<img src="./images/07.png" alt="">
+							</li>
+						</ol>
+						<canvas height="100" width="4896"></canvas>
+					</div>
+				</div>
+				<span class="left-btn"></span>
+				<span class="right-btn"></span>
+			</div>
+			<div class="weather-live">
+				<div class="seven-wea">
+					<h2 class="tit">7日天气<a href="" class="fifteen-forecast">15日天气预报</a></h2>
+					<ol class="seven-rep">
+						<li class="item">
+							<div class="day-time">
+								<p class="day">昨天</p>
+								<p class="date">12/13</p>
+								<p class="s-weather">小雨</p>
+								<img src="./images/07.png" alt="">
+							</div>
+							<div class="night-time">
+								<img src="./images/07.png" alt="">
+								<p class="s-weather">小雨</p>
+								<p class="wind-direc">北风</p>
+								<p class="level">3级</p>
+							</div>
+						</li>
+						<li class="item">
+							<div class="day-time">
+								<p class="day">昨天</p>
+								<p class="date">12/13</p>
+								<p class="s-weather">小雨</p>
+								<img src="./images/07.png" alt="">
+							</div>
+							<div class="night-time">
+								<img src="./images/07.png" alt="">
+								<p class="s-weather">小雨</p>
+								<p class="wind-direc">北风</p>
+								<p class="level">3级</p>
+							</div>
+						</li>
+						<li class="item">
+							<div class="day-time">
+								<p class="day">昨天</p>
+								<p class="date">12/13</p>
+								<p class="s-weather">小雨</p>
+								<img src="./images/07.png" alt="">
+							</div>
+							<div class="night-time">
+								<img src="./images/07.png" alt="">
+								<p class="s-weather">小雨</p>
+								<p class="wind-direc">北风</p>
+								<p class="level">3级</p>
+							</div>
+						</li>
+						<li class="item">
+							<div class="day-time">
+								<p class="day">昨天</p>
+								<p class="date">12/13</p>
+								<p class="s-weather">小雨</p>
+								<img src="./images/07.png" alt="">
+							</div>
+							<div class="night-time">
+								<img src="./images/07.png" alt="">
+								<p class="s-weather">小雨</p>
+								<p class="wind-direc">北风</p>
+								<p class="level">3级</p>
+							</div>
+						</li>
+
+						<li class="item">
+							<div class="day-time">
+								<p class="day">昨天</p>
+								<p class="date">12/13</p>
+								<p class="s-weather">小雨</p>
+								<img src="./images/07.png" alt="">
+							</div>
+							<div class="night-time">
+								<img src="./images/07.png" alt="">
+								<p class="s-weather">小雨</p>
+								<p class="wind-direc">北风</p>
+								<p class="level">3级</p>
+							</div>
+						</li>
+						<li class="item">
+							<div class="day-time">
+								<p class="day">昨天</p>
+								<p class="date">12/13</p>
+								<p class="s-weather">小雨</p>
+								<img src="./images/07.png" alt="">
+							</div>
+							<div class="night-time">
+								<img src="./images/07.png" alt="">
+								<p class="s-weather">小雨</p>
+								<p class="wind-direc">北风</p>
+								<p class="level">3级</p>
+							</div>
+						</li>
+						<li class="item">
+							<div class="day-time">
+								<p class="day">昨天</p>
+								<p class="date">12/13</p>
+								<p class="s-weather">小雨</p>
+								<img src="./images/07.png" alt="">
+							</div>
+							<div class="night-time">
+								<img src="./images/07.png" alt="">
+								<p class="s-weather">小雨</p>
+								<p class="wind-direc">北风</p>
+								<p class="level">3级</p>
+							</div>
+						</li>
+						<li class="item">
+							<div class="day-time">
+								<p class="day">昨天</p>
+								<p class="date">12/13</p>
+								<p class="s-weather">小雨</p>
+								<img src="./images/07.png" alt="">
+							</div>
+							<div class="night-time">
+								<img src="./images/07.png" alt="">
+								<p class="s-weather">小雨</p>
+								<p class="wind-direc">北风</p>
+								<p class="level">3级</p>
+							</div>
+						</li>
+					</ol>
+					<canvas width="816" height="190"></canvas>	
+				</div>
+				<div class="live-index">
+					<h2 class="tit">生活指数<span href="" class="r-btn"></span><span href="" class="l-btn"></span></h2>
+					<div class="live-show">
+						<ul>
+							<li class="item">
+								<div class="liv-in">
+									<i class="umbrella"></i>
+									<p>雨伞 带伞</p>
+									<div class="detail">有降水，请带上雨伞，如果你喜欢雨中漫步，享受大自然给予的温馨和快乐，在短时间外出可收起雨伞。</div>
+								</div>
+							</li>
+							<li class="item">
+								<div class="liv-in">
+									<i class="clothes"></i>
+									<p>穿衣 冷</p>
+									<div class="detail">天气冷，建议着棉服、羽绒服、皮夹克加羊毛衫等冬季服装。年老体弱者宜着厚棉衣、冬大衣或厚羽绒服。</div>
+								</div>
+							</li>
+							<li class="item">
+								<div class="liv-in">
+									<i class="sunscreen"></i>
+									<p>防晒 弱</p>
+									<div class="detail">属弱紫外辐射天气，长期在户外，建议涂擦SPF在8-12之间的防晒护肤品。</div>
+								</div>
+							</li>
+							<li class="item">
+								<div class="liv-in">
+									<i class="cold"></i>
+									<p>感冒 极易发</p>
+									<div class="detail">天气寒冷，昼夜温差极大且空气湿度较大，易发生感冒，请注意适当增减衣服，加强自我防护避免感冒。</div>
+								</div>
+							</li>
+							<li class="item">
+								<div class="liv-in">
+									<i class="sports"></i>
+									<p>运动 较不宜</p>
+									<div class="detail">有降水，推荐您在室内进行健身休闲运动；若坚持户外运动，须注意保暖并携带雨具。</div>
+								</div>
+							</li>
+							<li class="item">
+								<div class="liv-in">
+									<i class="carwash"></i>
+									<p>洗车 不宜</p>
+									<div class="detail">不宜洗车，未来24小时内有雨，如果在此期间洗车，雨水和路上的泥水可能会再次弄脏您的爱车。</div>
+								</div>
+							</li>
+							<li class="item">
+								<div class="liv-in">
+									<i class="fish"></i>
+									<p>钓鱼 不宜</p>
+									<div class="detail">天气不好，不适合垂钓。</div>
+								</div>
+							</li>
+							<li class="item">
+								<div class="liv-in">
+									<i class="traffic"></i>
+									<p>交通 良好</p>
+									<div class="detail">有降水，能见度不太好且路面潮湿，不适宜高速行驶，司机应更加集中注意力，小心驾驶。</div>
+								</div>
+							</li>
+							<li class="item">
+								<div class="liv-in">
+									<i class="diffusion"></i>
+									<p>天气污染扩散条件 良</p>
+									<div class="detail">气象条件有利于空气污染物稀释、扩散和清除，可在室外正常活动。</div>
+								</div>
+							</li>
+
+							<li class="item">
+								<div class="liv-in">
+									<i class="makeup"></i>
+									<p>化妆 保湿</p>
+									<div class="detail">皮肤易缺水，用润唇膏后再抹口红，用保湿型霜类化妆品。</div>
+								</div>
+							</li>
+							<li class="item">
+								<div class="liv-in">
+									<i class="heatstroke"></i>
+									<p>中暑 无</p>
+									<div class="detail">温度不高，其他各项气象条件适宜，中暑机率极低。</div>
+								</div>
+							</li>
+							<li class="item">
+								<div class="liv-in">
+									<i class="comfort"></i>
+									<p>舒适度 较不舒适</p>
+									<div class="detail">白天会有降雨发生，且天气较凉，您会感觉偏冷，不很舒适，请注意添加衣物。</div>
+								</div>
+							</li>
+							<li class="item">
+								<div class="liv-in">
+									<i class="mood"></i>
+									<p>心情 差</p>
+									<div class="detail">天气阴冷有降水，湿嗒塔的环境让人的心情难以开朗，此时呆在暖和的房子里，可以感受到暖暖的温馨在周围的空气里漾开来。</div>
+								</div>
+							</li>
+							<li class="item">
+								<div class="liv-in">
+									<i class="tourism"></i>
+									<p>旅游 适宜</p>
+									<div class="detail">稍凉，但是有较弱降水和微风作伴，会给您的旅行带来意想不到的景象，适宜旅游，可不要错过机会呦！</div>
+								</div>
+							</li>
+							<li class="item">
+								<div class="liv-in">
+									<i class="ultraviolet"></i>
+									<p>紫外线强度 最弱</p>
+									<div class="detail">属弱紫外线辐射天气，无需特别防护。若长期在户外，建议涂擦SPF在8-12之间的防晒护肤品。</div>
+								</div>
+							</li>
+							<li class="item">
+								<div class="liv-in">
+									<i class="allergy"></i>
+									<p>过敏 极不易发</p>
+									<div class="detail">天气条件极不易诱发过敏，有降水，出行注意携带雨具。</div>
+								</div>
+							</li>
+						</ul>
+					</div>
+					
+				</div>
+			</div>
+			<div class="update-feedback">
+				<img src="./images/feedback-a703892efa.png" alt="">
+			</div>
+		</div>
+	</div>
+	<div class="footer">
+		<div class="message">
+			<ul class="support">
+				<li class="item">
+					<img src="./images/sponsor1-9995ec582a.png" alt="">
+				</li>
+				<li class="item">
+					<img src="./images/sponsor2-1e7aa703d7.png" alt="">
+				</li>
+				<li class="item">
+					<img src="./images/sponsor3-eaa2980919.png" alt="">
+				</li>
+				<li class="item">
+					<img src="./images/sponsor4-b5fe793632.png" alt="">
+				</li>
+				<li class="item">
+					<img src="./images/sponsor5-dae19b0eaa.png" alt="">
+				</li>
+			</ul>
+			<ul class="about-tecent clearfix">
+				<li><a href="">关于腾讯</a>|</li>
+				<li><a href="">About Tecent</a>|</li>
+				<li><a href="">服务协议</a>|</li>
+				<li><a href="">隐私政策</a>|</li>
+				<li><a href="">开放平台</a>|</li>
+				<li><a href="">广告服务</a>|</li>
+				<li><a href="">腾讯招聘</a>|</li>
+				<li><a href="">腾讯公益</a>|</li>
+				<li><a href="">客服中心</a>|</li>
+				<li><a href="">举报中心</a>|</li>
+				<li><a href="">网站导航</a></li>
+			</ul>
+			<p>Copyright © 1998 - 2017 Tencent. All Rights Reserved</p>
+			<p>
+				<a href="">腾讯公司</a>
+				<a href="">版权所有</a>
+			</p>
+		</div>
+	</div>
+	<script src="./js/tool.js"></script>
+	<script src="./js/getData.js"></script>
+	<script src="./js/renderWeatherData.js"></script>
+	<script src="./js/renderWeatherIntro.js"></script>
+	<script src="./js/renderWeatherForHours.js"></script>
+	<script src="./js/renderWeatherForDay.js"></script>
+	<script src="./js/renderWeatherLives.js"></script>
+	<script src="./js/HoursSlide.js"></script>
+	<script src="./js/renderCityList.js"></script>
+	<script src="./js/renderTemperatureLine.js"></script>
+	<script src="./js/entry.js"></script>
+	
+	
+</body>
+</html>

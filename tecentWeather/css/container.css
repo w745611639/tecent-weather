@@ -1,0 +1,345 @@
+@charset "utf-8";
+.container{
+	margin-top: 40px;
+}
+/*.container {
+	height: 1000px;
+}*/
+.con .forecast-hours {
+	position: relative;
+	height: 288px;
+	/*background: blue;*/
+}
+.forecast-hours .tit,
+.seven-wea .tit,
+.live-index .tit {
+	height: 24px;
+	margin-bottom: 16px;
+	line-height: 24px;
+	font-size: 24px;
+}
+.forecast-hours .tit:before,
+.seven-wea .tit:before,
+.live-index .tit:before {
+	content: "";
+	display: inline-block;
+	width: 6px;
+	height: 100%;
+	margin-right: 10px;
+	border-radius: 3px;
+	background-color: rgb(47, 128, 237);
+	vertical-align: top;
+}
+.forecast-hours .mes-origin,
+.seven-wea .tit .fifteen-forecast {
+	float: right;
+	font-size: 16px;
+	font-weight: normal;
+}
+.forecast-hours .wea-show {
+	position: relative;
+	width: 100%;
+	height: 230px;
+	box-sizing: border-box;
+	border-radius: 5px;
+	border: 1px solid #ccc;
+	background: #fff;
+	overflow: hidden;
+}
+.wea-show .wrap-forecast-1h {
+	position: absolute;
+	left: 0;
+	top: 0;
+	transition: left 2s;
+}
+.wea-show .forecasts {
+	width: 4896px;
+	height: 88px;
+	padding-top: 38px;
+	transition: left 2s;
+}
+.wea-show canvas {
+	/*background: linear-gradient(to right, #15f, #ac6, #888, #98f);*/
+}
+.forecasts .item {
+	float: left;
+	width: 100px;
+	height: 86px;
+	padding-left: 2px;
+	/*background: #a83;*/
+	text-align: center;
+}
+.forecasts .item p {
+	
+}
+.forecasts .item img {
+	display: block;
+	width: 50px;
+	height: 50px;
+	margin: 18px auto;
+}
+.forecasts .item p:first-of-type {
+	height: 18px;
+	line-height: 18px;
+	font-size: 16px;
+	color: #999;
+}
+.forecasts .item .degree {
+	height: 24px;
+	line-height: 24px;
+	/*font-weight: bold;*/
+	font-size: 20px;
+}
+.forecast-hours > span {
+	position: absolute;
+	top: 50%;
+	width: 18px;
+	height: 30px;
+	background: rgba(88,88,88,0.5) url(../images/sprite-926fe8b98d.png) -133px -185px no-repeat;
+	border-radius: 3px;
+	cursor: pointer;
+}
+.forecast-hours > span:hover {
+	background-color: rgba(88,88,88,0.8);
+}
+.forecast-hours .left-btn {
+	left: 0;
+	transform: translate(-50%, calc(-50% + 12px));
+}
+.forecast-hours .right-btn {
+	right: 0;
+	transform: translate(50%, calc(-50% + 12px));
+	background-position: -237px -120px;
+}
+.con .weather-live {
+	margin-top: 40px;
+	height: 580px;
+}
+.weather-live .seven-wea,
+.weather-live .live-index {
+	height: 100%;
+	box-sizing: border-box;
+	/*border: 1px solid #ccc;*/
+}
+.weather-live .seven-wea {
+	position: relative;
+	float: left;
+	width: 818px;
+}
+.seven-wea .seven-rep {
+	width: 100%;
+	height: 540px;
+	box-sizing: border-box;
+	border: 1px solid #ddd;
+	/*padding: 0 6px;*/
+	border-radius: 5px;
+	background: #fff;
+}
+.seven-wea canvas {
+	position: absolute;
+	bottom: 160px;	
+	/*background: linear-gradient(to right, #38f, #ace, #06c);*/
+}
+.seven-rep li {
+	float: left;
+	height: 100%;
+	width: 102px;
+	box-sizing: border-box;
+	padding-top: 40px;
+	text-align: center;
+	font-size: 16px;
+}
+.seven-rep li p {
+	height: 24px;
+}
+.seven-rep li div p.temperature {
+	height: 50px;
+	line-height: 50px;
+	font-size: 22px;
+}
+.seven-rep li .s-weather {
+	height: 40px;
+	margin-top: 12px;
+}
+.seven-rep li img {
+	display: block;
+	width: 50px;
+	height: 50px;
+	margin: auto;
+}
+.seven-rep .night-time {
+	margin-top: 190px;
+	/*margin-top: 90px;*/
+}
+.seven-rep li .night-time p {
+	height: 20px;
+}
+.seven-rep li .night-time .s-weather {
+	margin: 25px 0 12px;
+}
+.weather-live .live-index {
+	position: relative;
+	float: right;
+	width: 400px;
+}
+.live-index .tit span {
+	float: right;
+	width: 22px;
+	height: 28px;
+	border-radius: 3px;
+	border: 1px solid #ddd;
+	cursor: pointer;
+	background: url(../images/sprite-926fe8b98d.png) no-repeat;
+}
+.live-index .tit span:hover {
+	background-color: rgb(239,239,239);
+}
+.live-index .tit .r-btn {
+	position: relative;
+	left: -1px;
+	background-position: -172px -186px;
+}
+.live-index .tit .l-btn {
+	background-position: -149px -186px;
+}
+.live-index .live-show {
+	position: relative;
+	height: 540px;
+	background: #fff;
+	border-radius: 5px;
+	box-sizing: border-box;
+	border-right: 1px solid #ddd;
+	border-bottom: 1px solid #ddd;
+	overflow: hidden;
+}
+.live-index .live-show ul {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 800px;
+	height: 100%;
+	background: #a82;
+	transition: left 1s;
+}
+.live-show ul li {
+	position: relative;
+	float: left;
+	width: 200px;
+	height: 135px;
+	box-sizing: border-box;
+	padding-top: 30px;
+	border-top: 1px solid #ddd;
+	border-left: 1px solid #ddd;
+	background: #fff;
+	overflow: hidden;
+}
+.live-show ul li .liv-in {
+	position: absolute;
+	top: 0px;
+	display: block;
+	width: 100%;
+	height: 200%;
+	transition: top 0.5s;
+}
+.live-show ul li:hover .liv-in {
+	top: -133px;
+}
+.live-show li i {
+	display: block;
+	width: 34px;
+	height: 34px;
+	margin: 30px auto 15px;
+	background: url(../images/sprite-926fe8b98d.png) no-repeat;
+}
+.live-show li p {
+	font-size: 16px;
+	text-align: center;
+}
+.live-show li .detail {
+	position: absolute;
+	display: flex;
+	align-items: center;
+	bottom: 0;
+	height: 50%;
+	padding: 0 16px;
+	font-size: 13px;
+	text-align: center;
+}
+.live-show li .umbrella {
+	background-position: -154px -68px;
+}
+.live-show li .clothes {
+	background-position: -40px -81px;
+}
+.live-show li .sunscreen {
+	background-position: -222px -68px;
+}
+.live-show li .cold {
+	background-position: -75px -81px;
+}
+.live-show li .sports {
+	background-position: 1px -121px;
+}
+.live-show li .carwash {
+	background-position: -34px -120px;
+}
+.live-show li .fish {
+	background-position: -68px -119px;
+}
+.live-show li .traffic {
+	background-position: -102px -120px;
+}
+.live-show li .diffusion {
+	background-position: -135px -120px;
+}
+.live-show li .makeup {
+	background-position: -171px -120px;
+}
+.live-show li .heatstroke {
+	background-position: -121px -68px;
+}
+.live-show li .comfort {
+	background-position: -222px -34px;
+}
+.live-show li .mood {
+	background-position: -188px -34px;
+}
+.live-show li .tourism {
+	background-position: -154px -34px;
+}
+.live-show li .ultraviolet {
+	background-position: -120px -34px;
+}
+.live-show li .allergy {
+	background-position: -188px -72px;
+}
+.live-index .control {
+	position: absolute;
+	left: 50%;
+	bottom: -12px;
+	/*width: 50px;
+	height: 4px;*/
+	transform: translate(-50%);
+}
+.control span {
+	float: left;
+	width: 20px;
+	height: 4px;
+	background-color: rgb(205,205,205);
+	cursor: pointer;
+}
+.control span:hover {
+	background-color: rgb(148,148,148);
+}
+.control span + span {
+	margin-left: 12px;
+}
+.con .update-feedback {
+	height: 90px;
+	margin: 40px 0 30px;
+}
+.update-feedback img {
+	float: right;
+	height: 90px;
+	cursor: pointer;
+}
