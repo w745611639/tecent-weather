@@ -1,159 +1,144 @@
-var oSea = document.getElementsByClassName('top')[0].getElementsByClassName('search')[0];
-var oHidden = oSea.getElementsByClassName('hidden')[0];
-var oInp = oHidden.getElementsByTagName('input')[0];
-var local_btn = document.getElementsByClassName('local-btn')[0];
-var pro_city = document.getElementsByClassName('pro-city-c')[0];
-var Mcity = oHidden.getElementsByClassName('more-city')[0];
-var Ocity = oHidden.getElementsByClassName('l-m-city')[0];
-var oMatch = oHidden.getElementsByClassName('c-match')[0];
-var maxHeight = Mcity.offsetHeight;
+/* 点击城市按钮 出现城市列表
+	点击对应城市，发送ajax 请求， 获取数据
+	 渲染天气数据
+*/
+(function (root) {
+	function pickTime (time, start, len) {
+		var reg = /(?=\d{2}$)/; // 匹配结尾是两个数字的空
+		return time.substr(start, len).split(reg).join(':');
+	}
+	root.pickTime = pickTime;
+	root.transitionEvent = whichTransitionEvent();
+}(weather))
+weather.getData();
+function bindEvent() {
+	var SearchBtn = document.querySelector('.top .search'),
+		oLive_rightBtn = document.querySelector('.live-index .r-btn'),
+		oLive_leftBtn = document.querySelector('.live-index .l-btn'),
+		oWea_for_1h = document.querySelector('.wea-show .wrap-forecast-1h'),
+		oSearch_input = SearchBtn.querySelector('.search-bar input'),
+		oHidden = SearchBtn.querySelector('.hidden'),
+		oMove_city = oHidden.querySelector('.hot-city'),
+		oMatch = document.querySelector('.c-match'),
+		Ocity = document.querySelector('.l-m-city'),
+		pro_city = document.querySelector('.pro-city-c'),
+		maxLeft = oWea_for_1h.offsetWidth - 1250,
+	// oLive_flag用于控制是否可以滑动    都为true 可以向右滑动，都为false可以向左滑动
+		oLive_flag = [true, true],     
+					
+		oLive_ul = document.querySelector('.live-show ul'),
+		oLive_left = parseInt(getStyle(oLive_ul).left),
+	
+		oL_btn = document.querySelector('.left-btn'),
+		oR_btn = document.querySelector('.right-btn');
 
-oSea.onclick = function (e) {
-	e.stopPropagation();
-	oHidden.style.display = 'block';
-	document.onclick = function () {
+	// 一小时天气预报 点击滑动
+	oL_btn.addEventListener('click', function () { 
+		var Left = parseFloat(getStyle(oWea_for_1h, null).left); 
+		weather.forecastHoursSlide(Left < 0, 1250);		
+	}, false); 
+	oR_btn.addEventListener('click', function () {
+		var Left = parseFloat(getStyle(oWea_for_1h, null).left);	
+		weather.forecastHoursSlide(Left > -maxLeft, -1250);
+	}, false); 
+
+
+	// 生活指数 运动
+	oLive_rightBtn.addEventListener('click', function () {
+		changePositionLeft(oLive_ul, -400, oLive_flag, false);
+	}, false);
+	oLive_leftBtn.addEventListener('click', function () {
+		changePositionLeft(oLive_ul, 400, oLive_flag, true);
+	}, false);
+
+	// 点击城市区域，展示列表城市信息
+	SearchBtn.addEventListener('click', function (event) {
+		event.stopPropagation();
+		var oHidden = document.querySelector('.hidden');
+		oHidden.style.display = 'block';
+	}, false);
+
+	// 点击页面其他区域 隐藏城市列表
+	document.addEventListener('click', function () {
+		var oHidden = document.querySelector('.hidden');
 		oHidden.style.display = 'none';
-	}
-}
+	}, false);
 
-oInp.oninput = getCity(getData,1000);
-function getCity(handle, wait) {
-	var timer = null;
-	return function () {
-		clearTimeout(timer);
-		var _this = this;
-		timer = setTimeout(function () {
-			handle.apply(_this);
-		}, wait) 
-	}
-}
-function getData() {
-	var oScript = document.createElement('script');
-	oScript.src = 'https://wis.qq.com/city/like?source=pc&city=' + this.value +'&callback=dealData';
-	document.body.appendChild(oScript);
-	oScript.remove();
-}
-function dealData(json) {
-	var str = '';
-	var data = json.data;
-	var value = oInp.value;
-	var replaceValue = '<span>' + value + '</span>';
-	var reg = new RegExp('(' + value + ')', 'g');
-	var temp;
-	Ocity.style.display = 'none';
-	for(var prop in data) {
-		if(data.hasOwnProperty(prop)) {
-			temp = data[prop].replace(reg, replaceValue);
-			str += '<li>' + temp +'</li>';
+
+	// 搜索城市，下拉列表展示 ， 防抖
+	oSearch_input.addEventListener('input', (function (handle, wait) {    
+		var timer = null;
+		return function () {
+			var _this = this;
+			clearTimeout(timer);
+			timer = setTimeout(function () {
+				handle.call(_this);
+			}, wait) 
 		}
-	}
-	oMatch.innerHTML = str;
-}
-oMatch.onclick = function (e) {
-	e.stopPropagation();
-	var arr = e.target.innerText.split(','),
-		str = '';
-	if(arr[1]) {
+	}(function () {   // --> 筛选目标城市
+		// oMatch.style.display = 'none';
 		var oScript = document.createElement('script');
-		arr[2] = arr[2] ? arr[2] : '';
-		if(arr[2]) {
-			oScript.src =  'https://wis.qq.com/weather/common?source=pc&weather_type=observe%7Cforecast_1h%7Cforecast_24h%7Cair%7Cindex&province=' + arr[0] + '&city=' + arr[1] + '&county=' + arr[2] + '&callback=renderData';
-			str += arr[1] + arr[2];
-		} else {
-			oScript.src =  'https://wis.qq.com/weather/common?source=pc&weather_type=observe%7Cforecast_1h%7Cforecast_24h%7Cair%7Cindex&province=' + arr[0] + '&city=' + arr[1] + '&county=&callback=renderData';
-			str += arr[0] + arr[1];
-		}	
+		oScript.src = 'https://wis.qq.com/city/like?source=pc&city=' + this.value + '&callback=weather.renderCityList';   // --> 筛选城市
 		document.body.appendChild(oScript);
 		oScript.remove();
-		pro_city.innerHTML = str;
+	}, 1000)), false);
+
+	// 点击下拉列表城市，获取对应的城市天气并渲染
+
+	oMatch.addEventListener('click', function (e) {    // --> 点击下拉列表的城市，发送对应的城市数据，取得对应的天气数据
+		e.stopPropagation();
+		var arr = e.target.innerText.split(','),
+			str = '',
+			oScript;
+		if(arr[1]) {
+			oScript = document.createElement('script');
+			arr[2] = arr[2] ? arr[2] : '';
+			if(arr[2]) {
+				oScript.src =  'https://wis.qq.com/weather/common?source=pc&weather_type=observe%7Cforecast_1h%7Cforecast_24h%7Cair%7Cindex&province=' + arr[0] + '&city=' + arr[1] + '&county=' + arr[2] + '&callback=weather.renderWeatherData'; 
+				str += arr[1] + arr[2];
+			} else {
+				oScript.src =  'https://wis.qq.com/weather/common?source=pc&weather_type=observe%7Cforecast_1h%7Cforecast_24h%7Cair%7Cindex&province=' + arr[0] + '&city=' + arr[1] + '&county=&callback=weather.renderWeatherData';
+				str += arr[0] + arr[1];
+			}	
+			document.body.appendChild(oScript);
+			oScript.remove();
+			pro_city.innerHTML = str;
+		}
+		oSearch_input.value = '';
+		oHidden.style.display = 'none';
+		this.style.display = 'none';
+		Ocity.style.display = 'block';
+	}, false);
+
+	// 点击热门城市，渲染对应的城市天气
+	oMove_city.addEventListener('click', function (event) {
+		event.stopPropagation();
+		event.preventDefault();
+		if(event.target && event.target.nodeName === 'A') {
+			var province = event.target.getAttribute('data-province');
+			var city = event.target.innerHTML;
+			weather.getData(province, city);
+			oHidden.style.display = 'none';
+			if(province === city)  {
+				pro_city.innerHTML = province + ' ' + city;
+			} else  {
+				pro_city.innerHTML = province + '省 ' + city;
+			}
+			
+		}
+	}, false)
+
+
+	// 生活指数运动函数
+	function changePositionLeft(obj, change, arr, boolean) {
+		if(arr.indexOf(boolean) === -1) {   
+			arr[0] = boolean;
+			oLive_left += change;
+			obj.style.left = oLive_left + 'px';
+			bindTransitionEvent(weather.transitionEvent, obj, function () {
+				arr[1] = boolean;
+			});
+		}
 	}
-	oHidden.style.display = 'none';
 }
-function renderData(json) {
-	var poll_num = document.getElementsByClassName('poll-num')[0];
-	var poll_degree = document.getElementsByClassName('poll-degree')[0];
-	var wea_show = document.getElementsByClassName('wea-show')[0];
-	var oItem_1h = document.getElementsByClassName('forecast-hours')[0].getElementsByClassName('item');
-	var live_show = document.getElementsByClassName('live-show')[0];
-	var length = oItem_1h.length;
-	var forecast_1h = json.data['forecast_1h'];
-	poll_num.innerHTML =  json.data.air.aqi;     //    空气状况
-	poll_degree.innerHTML = json.data.air['aqi_name'];  // 空气状况
-	changeContent(wea_show, 'p', forecast_1h);
-}
-function changeContent(con,target, data) {
-	var obj = con.getElementsByTagName(target);
-	var arr = [];
-	for(var i = 0, length = obj.length; i < length; i ++) {
-		arr.push(obj[i]);
-	}
-	arr.forEach(function (ele, index) {
-		ele.innerHTML = addData(data[index], 'update_time');
-	})
-}
-function addData(data, prop) {
-	return data[prop].substr(8,2) + ':00';
-}
-// 优化方案
-// var managerData = {
-// 	init: function () {
-// 		this.forecastHours();
-// 		this.forecastSevenDay();
-// 		this.liveLevel();
-// 		this.weatherShort();
-// 	},
-// 	forecastHours: function () {
-// 		var oItem_1h = document.getElementsByClassName('forecast-hours')[0].getElementsByClassName('item');
-// 		for(var i = 0, length = oItem_1h.length; i < length; i ++) {
-// 			obj['forecast_1h']['p'][i] = oItem_1h[i].getElementsByTagName('p')[0];
-// 			obj['forecast_1h']['img'][i] = oItem_1h[i].getElementsByTagName('img')[0];
-// 		}
-// 	},
-// 	forecastSevenDay: function () {
-// 		console.time(1);
-// 		var oItem_24h = document.getElementsByClassName('seven-rep')[0].getElementsByClassName('item');
-// 		for(var i = 0, length = oItem_24h.length; i < length; i ++) {
-// 			obj['forecast_24h']['day_time']['day'][i] = oItem_24h[i].getElementsByClassName('day-time')[0].getElementsByClassName('day')[0];
-// 			obj['forecast_24h']['day_time']['date'][i] = oItem_24h[i].getElementsByClassName('day-time')[0].getElementsByClassName('date')[0];
-// 			obj['forecast_24h']['day_time']['weather'][i] = oItem_24h[i].getElementsByClassName('day-time')[0].getElementsByClassName('s-weather')[0];
-// 			obj['forecast_24h']['day_time']['img'][i] = oItem_24h[i].getElementsByClassName('day-time')[0].getElementsByTagName('img')[0];
-// 			obj['forecast_24h']['night_time']['img'][i] = oItem_24h[i].getElementsByClassName('night-time')[0].getElementsByTagName('img')[0];
-// 			obj['forecast_24h']['night_time']['weather'][i] = oItem_24h[i].getElementsByClassName('night-time')[0].getElementsByClassName('s-weather')[0];
-// 			obj['forecast_24h']['night_time']['wind_direc'][i] = oItem_24h[i].getElementsByClassName('night-time')[0].getElementsByClassName('wind-direc')[0];
-// 			obj['forecast_24h']['night_time']['level'][i] = oItem_24h[i].getElementsByClassName('night-time')[0].getElementsByClassName('level')[0];
-// 		}
-// 		console.timeEnd(1);
-// 	},
-// 	liveLevel: function () {
-
-// 	},
-// 	weatherShort: function () {
-
-
-// 	}
-// };
-// var obj = {
-// 	forecast_1h: {
-// 		p: {},
-// 		img: {}
-// 	},
-// 	forecast_24h: {
-// 		day_time: {
-// 			day: {},
-// 			date: {},
-// 			weather: {},
-// 			img: {}
-// 		},
-// 		night_time: {
-// 			img: {},
-// 			weather: {},
-// 			wind_direc: {},
-// 			level: {}
-// 		}	
-// 	},
-// 	index: {
-// 		allergy: {},
-
-// 	}
-// };
-// managerData.init();
+bindEvent();
