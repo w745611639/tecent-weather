@@ -18,7 +18,7 @@
 	function updateObserve (observe) {
 		var oWeather_short = document.querySelector('.weather-short');
 		html = `
-			<img src="./tecentWeather/images/s-02.png" alt="" width="175" height="175">
+			<img src="./images/s-02.png" alt="" width="175" height="175">
 			<div class="weather-des">
 				<p class="tem-air">
 					<span class="temperature">${observe.degree}°</span>

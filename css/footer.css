@@ -1,0 +1,42 @@
+@charset "UTF-8";
+.footer {
+	height: 180px;
+	padding-top: 40px;
+	background: #fff;
+
+	text-align: center;
+}
+.footer .support {
+	width: 820px;
+	height: 40px;
+	margin: 0 auto 32px;
+}
+.support li {
+	float: left;
+	padding: 4px 21px;
+}
+.support li img {
+	display: block;
+	width: 121px;
+	height: 32px;
+}
+.support li + li {
+	border-left: 1px dashed #ccc;
+}
+.footer .about-tecent {
+	display: inline-block;
+}
+.about-tecent li {
+	float: left;
+}
+.about-tecent li a {
+	padding: 0 5px;
+	line-height: 24px;
+}
+.message  a:hover {
+	text-decoration: underline;
+	color: rgb(189,10,1);
+}
+.footer .message p {
+	margin-top: 6px;
+}

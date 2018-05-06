@@ -19,10 +19,10 @@
 						<p class="day">昨天</p>
 						<p class="date">${temp.time.substr(-5).replace(reg, '/')}</p>
 						<p class="s-weather">${temp['day_weather_short']}</p>
-						<img src="./tecentWeather/images/07.png" alt="">     
+						<img src="./images/07.png" alt="">     
 					</div>
 					<div class="night-time">
-						<img src="./tecentWeather/images/07.png" alt="">
+						<img src="./images/07.png" alt="">
 						<p class="s-weather">${temp['night_weather_short']}</p>
 						<p class="wind-direc">北风</p>
 						<p class="level">${temp['night_wind_power']}级</p>

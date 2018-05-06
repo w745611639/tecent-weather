@@ -12,7 +12,7 @@
 			html += `
 				<li class='item'>
 					<p>${root.pickTime(temp.update_time, -6, 4)}</p>
-					<img src="./tecentWeather/images/00.png" alt="" />
+					<img src="./images/00.png" alt="" />
 				</li>
 			`
 		}
