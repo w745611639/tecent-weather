@@ -1,3 +1,9 @@
 # tecentWeather
     本项目使用原生js实现，选取城市，获取对应的城市天气情况
     使用jsonp技术，获取城市信息、天气状况并渲染
+项目体验
+----
+```
+你可以访问如下网址进行体验
+https://w745611639.github.io/tecent-weather/
+```
