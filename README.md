@@ -6,9 +6,6 @@
 项目体验
 ----
 你可以访问如下网址进行体验
-<<<<<<< HEAD
+
 <a href="https://w745611639.github.io/tecent-weather/">https://w745611639.github.io/tecent-weather/</a>
-=======
-https://w745611639.github.io/tecent-weather/
-```
->>>>>>> 8b401c4f13fe6550069d97a8f42d6ad453fcff27
+
